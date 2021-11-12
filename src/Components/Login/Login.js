@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState,useContext } from 'react';
 import './Login.css';
+import {useNavigate} from 'react-router-dom';
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password,setPassword]=useState('');
  
@@ -37,7 +39,11 @@ function Login() {
           <br />
           <button  >Login</button>
         </form>
-        <a onClick=''>Signup</a>
+        <br />
+        <a className='label' onClick={()=>{
+          navigate('/signup')
+        }}>Signup</a>
+        <br />
       </div>
     </div>
   );

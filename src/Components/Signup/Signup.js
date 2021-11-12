@@ -1,10 +1,10 @@
 import React from 'react';
 import './Signup.css';
 import { useState, useContext } from 'react';
-
+import { useNavigate } from 'react-router';
 
 export default function Signup() {
-  
+  const navigate=useNavigate()
   const [username, setUstername] = useState();
   const [email, setEmail] = useState()
   const [phone, setPhone] = useState();
@@ -63,10 +63,12 @@ export default function Signup() {
           />
           <br />
           <br />
-          <button>Signup</button>
+          <button >Signup</button>
         </form>
         <br />
-        <a className="label">Login</a>
+        <a className="label" onClick={()=>{
+          navigate('/login')
+        }}>Login</a>
         <br />
       </div>
     </div>
