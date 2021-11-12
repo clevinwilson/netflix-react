@@ -6,6 +6,7 @@ import RowPost from "./Components/RowPost/RowPost";
 import {originals,action} from './urls'
 import Home from "./Pages/Home";
 import Signup from "./Pages/Signup"
+import Login from "./Pages/Login";
 
 function App() {
   return (

@@ -14,6 +14,11 @@
     border-left-color: transparent;
     border-right-color: transparent;
     outline-color: transparent;
+    font-size: 21px;
+    border-radius: 6px;
+    border: none;
+    padding: 11px;
+    margin: 4px;
   }
   
   .loginParentDiv button {
@@ -23,6 +28,9 @@
     background-color: #002f34;
     color: whitesmoke;
     font-weight: 900;
+    border: none;
+    border-radius: 6px;
+    background-color: red;
   }
   .loginParentDiv button:hover {
     background-color: white;
@@ -34,5 +42,13 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
+  }
+  .label{
+    color: white;
+  }
+  .header-text{
+    color: white;
+    font-size: 32px;
+    margin: 7px;
   }
   

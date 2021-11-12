@@ -1,28 +1,17 @@
 import React from 'react';
 import { useState,useContext } from 'react';
-import {FirebaseContext} from '../../store/Context'
-import Logo from '../../olx-logo.png';
 import './Login.css';
-import { useHistory } from 'react-router';
 function Login() {
-  const history =useHistory()
-  const {firebase} =useContext(FirebaseContext)
   const [email, setEmail] = useState('');
   const [password,setPassword]=useState('');
-  const handleLogin=(e)=>{
-    e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(email,password).then(()=>{
-      history.push('/')
-    }).catch((error)=>{
-      alert(error.message)
-    })
-  }
+ 
   return (
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
+      <h2 className="header-text" >Login</h2>
+      <br />
         <form>
-          <label htmlFor="fname">Email</label>
+          <label className="label"  htmlFor="fname">Email</label>
           <br />
           <input
             className="input"
@@ -33,7 +22,8 @@ function Login() {
             onChange={(e)=>{setEmail(e.target.value)}}
           />
           <br />
-          <label htmlFor="lname">Password</label>
+          <br />
+          <label className="label"  htmlFor="lname">Password</label>
           <br />
           <input
             className="input"
@@ -45,11 +35,9 @@ function Login() {
           />
           <br />
           <br />
-          <button onClick={handleLogin} >Login</button>
+          <button  >Login</button>
         </form>
-        <a onClick={()=>{
-          history.push('/signup')
-        }} >Signup</a>
+        <a onClick=''>Signup</a>
       </div>
     </div>
   );
