@@ -4,18 +4,21 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 
 export default function Signup() {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const [username, setUstername] = useState();
   const [email, setEmail] = useState()
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
-  
+
 
   return (
     <div>
+      <div className='backgroud-image'>
+
+      </div>
       <div className="signupParentDiv">
-      <h2 className="header-text" >Sign In</h2>
-      <br />
+        <h2 className="header-text" >Sign In</h2>
+        <br />
         <form onSubmit=''>
           <label className="label" htmlFor="fname">Username</label>
           <br />
@@ -28,6 +31,7 @@ export default function Signup() {
             onChange={(e) => setUstername(e.target.value)}
           />
           <br />
+          <br />
           <label className="label" htmlFor="fname">Email</label>
           <br />
           <input
@@ -39,6 +43,7 @@ export default function Signup() {
             onChange={(e) => { setEmail(e.target.value) }}
           />
           <br />
+          <br />
           <label className="label" htmlFor="lname">Phone</label>
           <br />
           <input
@@ -49,6 +54,7 @@ export default function Signup() {
             name="phone"
             onChange={(e) => { setPhone(e.target.value) }}
           />
+          <br />
           <br />
           <label className="label" htmlFor="lname">Password</label>
           {/* { error ? <h6 style={{color:"red"}} >{error}</h6> :''} */}
@@ -63,10 +69,11 @@ export default function Signup() {
           />
           <br />
           <br />
+          <br />
           <button >Signup</button>
         </form>
         <br />
-        <a className="label" onClick={()=>{
+        <a className="label" onClick={() => {
           navigate('/login')
         }}>Login</a>
         <br />
