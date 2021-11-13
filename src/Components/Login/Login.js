@@ -8,7 +8,10 @@ function Login() {
   const [password, setPassword] = useState('');
 
   return (
-    <div className='backgroud-image'>
+    <div>
+      <div  className='backgroud-image'>
+
+      </div>
       <div className="loginParentDiv">
         <h2 className="header-text" >Login</h2>
         <br />
