@@ -7,6 +7,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 6px;
+    background-color: rgba(0,0,0,.75);
+    
   }
   
   .loginParentDiv .input {
@@ -45,10 +47,16 @@
   }
   .label{
     color: white;
+    margin: 4px;
   }
   .header-text{
     color: white;
     font-size: 32px;
     margin: 7px;
+  }
+  .backgroud-image{
+    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/5dd45df7-33f1-4274-97ea-e9c6aca69dad/ed1cb962-411d-4e43-bad2-33f07ae8e341/IN-en-20211108-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+    height: 814px;
+    width: 100%;
   }
   
