@@ -4,8 +4,8 @@ import NavBar from '../Components/NavBar/NavBar'
 function LoginPage() {
     return (
         <div>
-            <NavBar/>
             <Login />
+            <NavBar/>
         </div>
     )
 }

@@ -5,8 +5,9 @@ import NavBar from '../Components/NavBar/NavBar'
 function SignupPage() {
     return (
         <div>
-            <NavBar/>
+            
             <Signup/>
+            <NavBar/>
         </div>
     )
 }
