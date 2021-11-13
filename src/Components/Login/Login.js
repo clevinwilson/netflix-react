@@ -1,21 +1,30 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import './Login.css';
+import { FirebaseContext } from '../../store/Context';
 import { useNavigate } from 'react-router-dom';
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const { firebase } = useContext(FirebaseContext);
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+      navigate('/')
+    }).catch((error) => {
+      alert(error.message)
+    })
+  }
   return (
     <div>
-      <div  className='backgroud-image'>
+      <div className='backgroud-image'>
 
       </div>
       <div className="loginParentDiv">
         <h2 className="header-text" >Login</h2>
         <br />
-        <form>
+        <form onSubmit={handleSubmit}>
           <label className="label" htmlFor="fname">Email</label>
           <br />
           <input
