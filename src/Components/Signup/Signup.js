@@ -2,14 +2,31 @@ import React from 'react';
 import './Signup.css';
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
-
+import { FirebaseContext } from '../../store/Context';
 export default function Signup() {
   const navigate = useNavigate()
+  const [error,setError]=useState();
   const [username, setUstername] = useState();
   const [email, setEmail] = useState()
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
-
+  const { firebase } = useContext(FirebaseContext)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
+      result.user.updateProfile({ displayName: username }).then(()=>{
+        firebase.firestore().collection('users').add({
+          id: result.user.uid,
+          username: username,
+          phone: phone
+        }).then(()=>{
+          navigate('/login')
+        })
+      })
+    }).catch((error)=>{
+      setError(error.message);
+    })
+  }
 
   return (
     <div>
@@ -19,7 +36,7 @@ export default function Signup() {
       <div className="signupParentDiv">
         <h2 className="header-text" >Sign In</h2>
         <br />
-        <form onSubmit=''>
+        <form onSubmit={handleSubmit}>
           <label className="label" htmlFor="fname">Username</label>
           <br />
           <input
@@ -70,7 +87,7 @@ export default function Signup() {
           <br />
           <br />
           <br />
-          <button >Signup</button>
+          <button>Signup</button>
         </form>
         <br />
         <a className="label" onClick={() => {
