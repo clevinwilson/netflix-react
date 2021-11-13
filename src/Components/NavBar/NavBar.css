@@ -39,3 +39,10 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .user{
+    position: absolute;
+    right: 102px;
+  }
+  .user-name{
+    color: white;
+  }
