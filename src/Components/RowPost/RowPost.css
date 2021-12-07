@@ -26,3 +26,9 @@
 .poster:hover{
     transform: scale(1.1);
 }
+.favorite-icon{
+    position: absolute;
+    bottom: 13px;
+    right: 29px;
+    font-size: 21px;
+}

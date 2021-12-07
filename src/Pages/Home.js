@@ -10,8 +10,8 @@ function Home() {
         <div>
             <NavBar />
             <Banner />
-            <RowPost url={originals} title="Netflix Originals" />
-            <RowPost url={action} title="Actions" isSmall />
+            <RowPost url={originals} favorite='true' title="Netflix Originals" />
+            <RowPost url={action} favorite='false' title="Actions" isSmall />
         </div>
     )
 }
