@@ -3,9 +3,10 @@ import './RowPost.css'
 import axios from '../../axios'
 import { imageUrl, API_KEY } from "../../constants/constants";
 import YouTube from 'react-youtube';
-
+import {useNavigate} from 'react-router-dom'
 
 function RowPost(props) {
+    const navigate=useNavigate()
     const [movies, setMovies] = useState([])
     const [youtubeId, setYoutubeId] = useState('')
     useEffect(() => {
@@ -46,7 +47,7 @@ function RowPost(props) {
 
                             <img style={{ display: "block" }} onClick={() => handleMovie(obj.id)} className={props.isSmall ? 'small-poster' : 'poster'} alt="" src={`${imageUrl + obj.backdrop_path}`} />
                             {props.favorite=="true" ?
-                                <i class="favorite-icon far fa-heart"></i>
+                                <i onClick={()=>{alert("FAVORITES")}} class="favorite-icon far fa-heart"></i>
                                 :
                                 <i style={{fontSize:"16px",bottom:"9px",right:"21px"}} class="favorite-icon far fa-heart"></i>
                             }
