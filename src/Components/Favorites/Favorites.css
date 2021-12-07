@@ -14,7 +14,7 @@
 }
 .poster{
     cursor: pointer;
-    max-height: 250px;
+    max-height: 170px;
     margin-right: 10px;
 
 }
@@ -26,10 +26,11 @@
 .poster:hover{
     transform: scale(1.1);
 }
-.favorite-icon{
+.favorite-fill-icon{
     position: absolute;
     bottom: 13px;
     right: 29px;
     font-size: 21px;
     cursor: pointer;
+    color: #ff1616;
 }

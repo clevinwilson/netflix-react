@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 function Favorites() {
 
     return (
-        <div className='row'>
+        <div style={{marginTop:"80px"}} className='row'>
             <h2>Favorites</h2>
             <div className="posters">
 
@@ -17,19 +17,30 @@ function Favorites() {
                 <div style={{ position: "relative" }}>
 
                     <img className='poster' style={{ display: "block" }} alt="" src='https://image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg' />
-                    <i onClick={() => { alert("Remove FAVORITES") }} class="favorite-icon far fa-heart"></i>
+                    <i onClick={() => { alert("Remove FAVORITES") }} class="favorite-fill-icon fas fa-heart"></i>
                 </div>
-
-               <div style={{ position: "relative" }}>
+                <div style={{ position: "relative" }}>
 
                     <img className='poster' style={{ display: "block" }} alt="" src='https://image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg' />
-                    <i onClick={() => { alert("Remove FAVORITES") }} class="favorite-icon far fa-heart"></i>
+                    <i onClick={() => { alert("Remove FAVORITES") }} class="favorite-fill-icon fas fa-heart"></i>
                 </div>
 
                 <div style={{ position: "relative" }}>
 
                     <img className='poster' style={{ display: "block" }} alt="" src='https://image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg' />
-                    <i onClick={() => { alert("RemoveFAVORITES") }} class="favorite-icon far fa-heart"></i>
+                    <i onClick={() => { alert("Remove FAVORITES") }} class="favorite-fill-icon fas fa-heart"></i>
+                </div>
+
+                <div style={{ position: "relative" }}>
+
+                    <img className='poster' style={{ display: "block" }} alt="" src='https://image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg' />
+                    <i onClick={() => { alert("RemoveFAVORITES") }} class="favorite-fill-icon fas fa-heart"></i>
+                </div>
+
+                <div style={{ position: "relative" }}>
+
+                    <img className='poster' style={{ display: "block" }} alt="" src='https://image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg' />
+                    <i onClick={() => { alert("RemoveFAVORITES") }} class="favorite-icon fas fa-heart"></i>
                 </div>
 
             </div>
