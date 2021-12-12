@@ -25,19 +25,25 @@ function Favorites() {
             SetFavoriteMovies(allFavoriteMovies)
         })
     })
+    function removeFromFavorites(movieId){
+        alert(movieId)
+        firebase.firestore().collection('favorites').doc(movieId).delete().then(() => {
+            console.log("Document successfully deleted!");
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
 
     return (
         <div style={{ marginTop: "80px" }} className='row'>
             <h2>Favorites</h2>
             {
                 favoritemovies.map((movies) => {
-                   
                     return (
                         <div className="posters">
                             <div style={{ position: "relative" }}>
-
                                 <img className='poster' style={{ display: "block" }} alt="" src={`${imageUrl + movies.banner}`} />
-                                <i onClick={() => { alert("Remove FAVORITES") }} class="favorite-fill-icon fas fa-heart"></i>
+                                <i onClick={() => {removeFromFavorites(movies.id) }} class="favorite-fill-icon fas fa-heart"></i>
                             </div>
 
                         </div>

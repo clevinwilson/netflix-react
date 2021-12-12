@@ -23,7 +23,7 @@ function RowPost(props) {
             movieId: postId,
             banner:postImage
         }).then(() => {
-            alert("added")
+            alert("Added to Favorites")
         })
     }
     
