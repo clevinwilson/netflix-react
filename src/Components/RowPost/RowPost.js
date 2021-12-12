@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './RowPost.css'
 import axios from '../../axios'
 import { imageUrl, API_KEY } from "../../constants/constants";
 import YouTube from 'react-youtube';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { FirebaseContext } from "../../store/Context"
 
 function RowPost(props) {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const [movies, setMovies] = useState([])
     const [youtubeId, setYoutubeId] = useState('')
     useEffect(() => {
@@ -16,6 +17,16 @@ function RowPost(props) {
             console.log(err);
         })
     })
+    const { firebase } = useContext(FirebaseContext)
+    function addToFavorites(postId,postImage) {
+        firebase.firestore().collection('favorites').add({
+            movieId: postId,
+            banner:postImage
+        }).then(() => {
+            alert("added")
+        })
+    }
+    
 
     const opts = {
         height: '390',
@@ -46,14 +57,14 @@ function RowPost(props) {
                         <div style={{ position: "relative" }}>
 
                             <img style={{ display: "block" }} onClick={() => handleMovie(obj.id)} className={props.isSmall ? 'small-poster' : 'poster'} alt="" src={`${imageUrl + obj.backdrop_path}`} />
-                            {props.favorite=="true" ?
-                                <i onClick={()=>{alert(obj.id)}} class="favorite-icon fas fa-heart"></i>
+                            {props.favorite == "true" ?
+                                <i onClick={() => { addToFavorites(obj.id,obj.backdrop_path) }} class="favorite-icon fas fa-heart"></i>
                                 :
-                                <i style={{fontSize:"16px",bottom:"9px",right:"21px"}} class="favorite-icon fas fa-heart"></i>
+                                <i onClick={() => { addToFavorites(obj.id,obj.backdrop_path) }} style={{ fontSize: "16px", bottom: "9px", right: "21px" }} class="favorite-icon fas fa-heart"></i>
                             }
-                           
+
                         </div>
-    
+
 
                     )
                 }
