@@ -26,10 +26,10 @@ function Favorites() {
         })
     })
     function removeFromFavorites(movieId){
-        alert(movieId)
         firebase.firestore().collection('favorites').doc(movieId).delete().then(() => {
             console.log("Document successfully deleted!");
         }).catch((error) => {
+            alert("Error removing document")
             console.error("Error removing document: ", error);
         });
     }
