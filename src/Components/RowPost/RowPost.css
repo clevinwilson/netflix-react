@@ -33,3 +33,6 @@
     font-size: 21px;
     cursor: pointer;
 }
+.favorite-icon:hover {
+    color: red;
+  }
