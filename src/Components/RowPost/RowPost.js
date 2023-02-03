@@ -1,10 +1,10 @@
 import React from 'react';
 import './RowPost.css'
 
-function RowPost() {
+function RowPost(props) {
   return (
     <div className="row">
-      <h2>Title</h2>
+      <h2>{props.title}</h2>
       <div className="posters">
         <img
           className="poster"
