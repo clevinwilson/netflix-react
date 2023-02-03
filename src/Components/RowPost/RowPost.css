@@ -1,0 +1,16 @@
+.row {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.posters{
+    display: flex;
+    padding-top: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.poster{
+    max-height: 250px;
+    margin: 10px;
+}

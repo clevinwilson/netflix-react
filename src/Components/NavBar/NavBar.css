@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    background-color: #00000000;
+    z-index: 1;
+}
+
+.logo {
+    width: 80px;
+    margin-left: 20px;
+}
+
+.avatar {
+    width: 30px;
+    margin-right: 20px;
+}
