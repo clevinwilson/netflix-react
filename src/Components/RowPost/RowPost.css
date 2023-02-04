@@ -17,10 +17,12 @@
 .poster {
     max-height: 230px;
     margin: 10px;
+    cursor: pointer;
 }
 
 .short-poster {
     max-height: 110px;
     margin: 10px;
+    cursor: pointer;
 
 }
